@@ -43,9 +43,11 @@ def show_new_board(selected_word):
 
 def check_letter(chosen_letter, hidden_word, lives, coincidences):
     end = False
-    if chosen_letter in hidden_word:
+    if chosen_letter in hidden_word and chosen_letter not in correct_characters:
         correct_characters.append(chosen_letter)
         coincidences += 1
+    elif chosen_letter in hidden_word and chosen_letter in correct_characters:
+        print("You have already found that letter. Try another one!")
     else:
         incorrect_characters.append(chosen_letter)
         lives -= 1
@@ -85,4 +87,7 @@ while not game_finished:
     letter = request_letter()
     attempts, finished, successes = check_letter(letter, word, attempts, successes)
     game_finished = finished
+
+
+
 
