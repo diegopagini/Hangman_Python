@@ -60,7 +60,7 @@ def check_letter(chosen_letter, hidden_word, lives, coincidences):
 
 def lost():
     print("You have lost all your lives")
-    print("The hidden word was :" + word)
+    print("The hidden word was: " + word)
     return True
 
 
@@ -85,7 +85,4 @@ while not game_finished:
     letter = request_letter()
     attempts, finished, successes = check_letter(letter, word, attempts, successes)
     game_finished = finished
-
-
-
 
